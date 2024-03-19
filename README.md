@@ -11,3 +11,5 @@ El material está organizado en carpetas, que recomendamos utilizar para
 Comandos para que Lucas se pueda unir al Git comunitario
   git config --global user.email "you@example.com"
   git config --global user.name "Your Name"
+  https://happygitwithr.com/https-pat
+  
