@@ -4,5 +4,6 @@ Este repositorio es parte del material de cátedra de la materia Informática Es
 
 El material está organizado en carpetas, que recomendamos utilizar para 
 
-[Datos]("datos/")
-[Scripts]("scripts/")
+[Datos]("datos")
+
+[Scripts]("scripts")
