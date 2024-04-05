@@ -1,0 +1,15 @@
+---
+title: "Correlación Lineal"
+output: 
+  html_document:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Teoría
+
+## Práctica
+
