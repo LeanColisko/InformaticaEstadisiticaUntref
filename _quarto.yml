@@ -5,20 +5,22 @@ project:
 website:
   title: "Informática Estadística 2"
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   sidebar:
     background: "#24639A"
-    logo: img/untref_logo.jpg
+    logo: "img/untref_logo.jpg"
+    pinned: false
+    align: center
     search: true
-    left:
+    style: "docked"
+    contents:
       - text: "Inicio"
-        file: index.qmd
+        href: pages/index.qmd
       - text: "Intro"
-        file: intro.qmd
+        href: pages/intro.qmd
       - text: "Resumen"
-        file: summary.qmd
-      - text: "Referencias"
-        file: references.qmd
+        href: pages/summary.qmd
+        
   page-footer: 
     left: "Copyright 2024, UNTREF" 
     right: 
@@ -29,8 +31,6 @@ website:
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
 
 editor: visual
 
