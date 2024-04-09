@@ -1,6 +1,10 @@
 ---
-title: ''
-output: html_document
+title: 'Informática Estadística II'
+output: 
+  html_document:
+    theme: journal
+    highlight: tango
+
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](img/untref_logo.jpg)
 
-# Informatica estadistica II
+
 
 [Correlacion](Correlacion.html)
+
+
 
