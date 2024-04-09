@@ -1,23 +1,23 @@
 [
   {
-    "objectID": "pages/summary.html",
-    "href": "pages/summary.html",
-    "title": "Summary",
+    "objectID": "pages/regresion_lineal.html",
+    "href": "pages/regresion_lineal.html",
+    "title": "Regresión Lineal",
     "section": "",
-    "text": "Summary\nIn summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+    "text": "Back to top"
+  },
+  {
+    "objectID": "pages/correlacion.html",
+    "href": "pages/correlacion.html",
+    "title": "Correlación",
+    "section": "",
+    "text": "Grafico de correlacion\n\na &lt;- 1:10\nb &lt;- 10:1\n\nplot(a, b)\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "pages/index.html",
     "href": "pages/index.html",
-    "title": "Preface",
+    "title": "Inicio",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "pages/intro.html",
-    "href": "pages/intro.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Introduction\nThis is a book created from markdown and executable code.\nSee @knuth84 for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2"
+    "text": "Inicio\nEsta pagina web es un trabajo conjunto de la cohorte 2024 de informatica estadistica de la UNTREF.\n\n\n\n\n Back to top"
   }
 ]

@@ -1,0 +1,14 @@
+---
+title: "Correlación"
+---
+
+# Grafico de correlacion
+
+```{r}
+
+a <- 1:10
+b <- 10:1
+
+plot(a, b)
+
+```

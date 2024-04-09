@@ -5,7 +5,7 @@ project:
 website:
   title: "Informática Estadística 2"
   page-navigation: true
-  back-to-top-navigation: false
+  back-to-top-navigation: true
   sidebar:
     background: "#24639A"
     logo: "img/untref_logo.jpg"
@@ -13,13 +13,14 @@ website:
     align: center
     search: true
     style: "docked"
+    collapse-level: 1
     contents:
       - text: "Inicio"
         href: pages/index.qmd
-      - text: "Intro"
-        href: pages/intro.qmd
-      - text: "Resumen"
-        href: pages/summary.qmd
+      - text: "Correlación de variables"
+        href: pages/correlacion.qmd
+      - text: "Regresión Lineal"
+        href: pages/regresion_lineal.qmd
         
   page-footer: 
     left: "Copyright 2024, UNTREF" 
