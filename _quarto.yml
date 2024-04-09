@@ -6,8 +6,9 @@ website:
   title: "Informática Estadística 2"
   page-navigation: true
   back-to-top-navigation: true
-  navbar:
+  sidebar:
     background: "#24639A"
+    logo: img/untref_logo.jpg
     search: true
     left:
       - text: "Inicio"
