@@ -12,3 +12,5 @@ b <- 10:1
 plot(a, b)
 
 ```
+
+## Relación entre variables numericas

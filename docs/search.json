@@ -11,7 +11,7 @@
     "href": "pages/correlacion.html",
     "title": "Correlación",
     "section": "",
-    "text": "Grafico de correlacion\n\na &lt;- 1:10\nb &lt;- 10:1\n\nplot(a, b)\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "a &lt;- 1:10\nb &lt;- 10:1\n\nplot(a, b)"
   },
   {
     "objectID": "pages/index.html",
