@@ -1,18 +1,29 @@
 project:
-  type: book
+  type: website
   output-dir: docs
 
-book:
+website:
   title: "Informática Estadística 2"
-  author: "Norah Jones"
-  date: "9/4/2024"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    background: "#24639A"
+    search: true
+    left:
+      - text: "Inicio"
+        file: index.qmd
+      - text: "Intro"
+        file: intro.qmd
+      - text: "Resumen"
+        file: summary.qmd
+      - text: "Referencias"
+        file: references.qmd
+  page-footer: 
+    left: "Copyright 2024, UNTREF" 
+    right: 
+      - icon: github
+        href: https://github.com/LeanColisko/InformaticaEstadisticaUntref
+    background: "#24639A"
 
 format:
   html:
