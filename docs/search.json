@@ -11,7 +11,14 @@
     "href": "pages/correlacion.html",
     "title": "Correlación",
     "section": "",
-    "text": "a &lt;- 1:10\nb &lt;- 10:1\n\nplot(a, b)"
+    "text": "a &lt;- 1:10\nb &lt;- 10:1\n\nplot(a, b)\n\n\n\n\n\n\ncualquier cosa"
+  },
+  {
+    "objectID": "pages/correlacion.html#relación-entre-variables-numericas",
+    "href": "pages/correlacion.html#relación-entre-variables-numericas",
+    "title": "Correlación",
+    "section": "",
+    "text": "cualquier cosa"
   },
   {
     "objectID": "pages/index.html",
