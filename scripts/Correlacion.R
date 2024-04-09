@@ -29,7 +29,7 @@ cor.test(x = col_a_r, y =  col_b_r, method = "pearson")
 # Datos
 library(haven)
 library(dplyr)
-world <- read_sav("tps_pasados/World95_5.sav")
+world <- read_sav("datos/World95_5.sav")
 
 input_corr <- world %>% 
   dplyr::select(lifeexpm, babymort, literacy, gdp_cap, calories, fertilty) %>% 

@@ -1,6 +1,6 @@
 library(haven)
 
-world <- read_sav("tps_pasados/World95_5.sav")
+world <- read_sav("datos/World95_5.sav")
 lifeexpf.lm <- lm(lifeexpf ~ lifeexpm, data = world, na.action = na.exclude)
 
 summary(lifeexpf.lm)
