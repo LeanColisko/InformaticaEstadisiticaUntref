@@ -1,0 +1,23 @@
+---
+title: "Clusters"
+---
+
+**Datos**
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(haven)
+df_eph <- df_eph <- read_sav("C:/Users/Usuario/Documents/Iván/UNTREF/2024 - 1er cuatri/Informática Estadística II/InformaticaEstadisticaUntref/datos/cluster_1_1.sav")
+
+```
+
+**Gráfico de tasa de desocupación vs tasa de actividad**
+
+```{r}
+ggplot(df_eph, aes(x = tem88, y = teo98,color = ag2)) +
+  geom_point() +
+  labs(title = "Relación entre Tasa de Desocupación y Tasa de Actividad",
+       x = "Tasa de Desocupación (%)", y = "Tasa de Actividad (%)")
+#Sinceramente no entiendo las variables de la tabla. En spss tampoco muestra descripción de las variables
+```
