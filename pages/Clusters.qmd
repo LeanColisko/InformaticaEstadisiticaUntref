@@ -4,20 +4,99 @@ title: "Clusters"
 
 **Datos**
 
+Se realizará un análisis de las tasas de empleo, actividad y desocupación obtenidos de 25 aglomerados de Argentina en mayo de 1990
+
 ```{r}
 library(dplyr)
 library(ggplot2)
 library(haven)
-df_eph <- df_eph <- read_sav("C:/Users/Usuario/Documents/Iván/UNTREF/2024 - 1er cuatri/Informática Estadística II/InformaticaEstadisticaUntref/datos/cluster_1_1.sav")
+df_eph <- df_eph <- read_sav("../datos/cluster_1_1.sav")
+#Reducción de Variables 
+datos_clean <- df_eph %>%
+  select(ag2, tem90b, tam90b, tdm90b)
+#Vector aglomerados
+aglomerados <- datos_clean$ag2
 
 ```
 
 **Gráfico de tasa de desocupación vs tasa de actividad**
 
 ```{r}
-ggplot(df_eph, aes(x = tem88, y = teo98,color = ag2)) +
+ggplot(datos_clean, aes(x = tam90b, y = tem90b,color = ag2)) +
   geom_point() +
-  labs(title = "Relación entre Tasa de Desocupación y Tasa de Actividad",
+  labs(title = "Relación entre Tasa de Actividad y Tasa de Empleo en mayo 1990",
+       x = "Tasa de Actividad (%)", y = "Tasa de Empleo (%)")
+ggplot(datos_clean, aes(x = tdm90b, y = tem90b,color = ag2)) +
+  geom_point() +
+  labs(title = "Relación entre Tasa de Desocupación y Tasa de Empleo en mayo 1990",
+       x = "Tasa de Desocupación (%)", y = "Tasa de Empleo (%)")
+ggplot(datos_clean, aes(x = tdm90b, y = tam90b,color = ag2)) +
+  geom_point() +
+  labs(title = "Relación entre Tasa de Desocupación y Tasa de Actividad en mayo 1990",
        x = "Tasa de Desocupación (%)", y = "Tasa de Actividad (%)")
-#Sinceramente no entiendo las variables de la tabla. En spss tampoco muestra descripción de las variables
 ```
+
+Al analizar los gráficos de dispersión realizados con las tasas de mayo de 1990, se observa que no parece haber una asociación marcada entre la tasa de desocupación y las de empleo y actividad de mayo de 1990. Sin embargo, es posible ver una asociación positiva entre las tasas de actividad y de empleo. Los aglomerados que presentan mayor actividad, también lo hacen en la tasa de empleo.
+
+**Análisis de clusters**
+
+```{r}
+# Re-escalamos los datos numéricos
+datos <- scale(datos_clean %>% select(-ag2)) 
+row.names(datos) <- aglomerados
+# Calculamos la matriz de distancia de todos vs todos
+x <- dist(datos)
+# Construimos el modelo jerárquico con diferentes métodos
+cluster.comp <- hclust(x, method = "complete")
+cluster.single <- hclust(x, method = "single")
+cluster.avg <- hclust(x, method = "average")
+cluster.ward <- hclust(x, "ward.D")
+# Visualizamos los resultados
+cluster.comp
+cluster.single
+cluster.avg
+cluster.ward
+```
+
+Los análisis jerárquicos necesitan una matriz de distancias, en este caso calculada a través de la distancia euclideana. Luego, los grupos se un en entre sí a partir de diferentes métodos (complete, sigle, average, ward.d)
+
+En este caso, se elige mostrar el dendograma realizado a partir de la unión de los grupos a través de las distancias medias entre los objetos
+
+```{r}
+# Graficamos un dendográma
+plot(as.dendrogram(cluster.avg), main = "Dendograma: cluster average")
+```
+
+Los aglomerados más similares entre sí son Paraná y San Juan, Bahía Blanca y Comodoro Rivadavia y Gran Rosario y Santa fe. Esto queda indicado en las alturas de las "ramas del árbol". A menor altura, menor distancia entre los aglomerados.
+
+El dendograma podría dividirse en en dos grandes grupos o en una menor cantidad. Viendo el resultado del mismo, se decide hacerlo en 5 grupos.
+
+```{r}
+# Para etiquetar cada observación según su pertenencia a un grupo
+table(cutree(cluster.avg, 5))
+datos_clean$grupos <- cutree(cluster.avg, 5)
+
+```
+
+Estos grupos quedan formados por:
+
+Grupo 1: Bahía Blanca, Comodoro Rivadavia, Rosario, Santa Fe, Catamarca, Tucumán (6 aglomerados).
+
+Grupo 2: Santiago del Estero, Resistencia, La Rioja, San Luis, Neuquén, Córdoba, La Plata, Mendoza (8 aglomerados).
+
+Grupo 3: Jujuy, Formosa, Corrientes, Posadas, Salta, Paraná y San Juan (7 aglomerados).
+
+Grupo 4: Santa Rosa, Rio Gallegos (2 aglomerados).
+
+Grupo 5: Ushuaia y Buenos Aires (2 aglomerados).
+
+```{r}
+datos_clean %>%
+  group_by(grupos) %>%
+  summarise(media_tem = mean(tem90b),
+            media_tam = mean(tam90b),
+            media_tdm = mean(tdm90b),
+            cantidad_aglomerados = n())
+```
+
+Los grupos que presentan mayor desocupación son el grupo 1 y el 5, con una tasa promedio mayor al 10,5%. Este último, además, presenta el mayor nivel de actividad y de empleo. Por lo que son aglomerados con mucho empleo pero también con mucha gente buscando el mismo. El grupo 2 presenta valores intermedios en los porcentajes de tasas de empleo, actividad y desocupación, mientras que el grupo 3 presenta los valores más bajos de empleo y actividad. Por último, el grupo 4 (Santa Rosa y Rio Gallegos) muestran altos niveles en la tasa de empleo y actividad, así como el menor valor dentro de la desocupación
