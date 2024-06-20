@@ -17,13 +17,13 @@ website:
     contents:
       - text: "Inicio"
         href: pages/index.qmd
-      - text: "Correlación de variables"
-        href: pages/correlacion.qmd
-      - text: "Regresión Lineal"
-        href: pages/regresion_lineal.qmd
+      - text: "Regresión Logísitca"
+        href: pages/regresion_logistica.qmd
+      - text: "Cluster Jerarquico"
+        href: pages/Clusters.qmd
         
   page-footer: 
-    left: "Copyright 2024, UNTREF" 
+    left: "2024 - UNTREF" 
     right: 
       - icon: github
         href: https://github.com/LeanColisko/InformaticaEstadisticaUntref

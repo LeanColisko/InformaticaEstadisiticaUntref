@@ -1,4 +1,15 @@
 # Inicio {.unnumbered}
 
-Esta pagina web es un trabajo conjunto de la cohorte 2024 de informatica estadistica de la UNTREF.
+En el marco de la matria de Informática Estadísitica 2 de la Licenciatura en Estadísitica de la Universidad de Tres de Febrero, creamos esta página entre estudiantes y docentes.
 
+En la materia se abordan diferentes modelos estadísiticos que pueden ser resueltos con el Software SPSS de IBM o con R.
+
+1 - Regresión Lineal
+2 - Regresión Múltiple
+3 - Clusters
+
+En esta página cada estudiate comparte la resulución de un ejercicio con R. Alentando también el conocimiento y uso de herramientas de colaboración como Git y GitHub.
+
+Docentes: Miguel Oliva, Leandro Colisko
+
+Estudiantes cohorte 2024: Iván Damico, Hernan Brunstein, Lucas Lopez

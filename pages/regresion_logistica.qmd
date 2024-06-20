@@ -1,4 +1,9 @@
-Regresión Logística
+---
+title: "Regresión Logística"
+author: "Hernan Brunstein"
+---
+
+## Objetivo:
 
 Se realizará una regresión logística teniendo como variable regresada al estado de ocupación reclasificado como OCUPADO y DESOCUPADO, y como variables regresoras a: Monto de Ingreso Total Individual (P47T), Sexo (CH04), Años Cumplidos (CH06) y Asiste o Asistió a Algún Establecimiento Educativo (CH10)
 

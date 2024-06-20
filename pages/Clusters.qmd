@@ -1,9 +1,12 @@
 ---
 title: "Clusters"
+author: "Iván Damico"
 ---
 
-**Datos**
 
+## Objetivo:
+
+**Datos**
 Se realizará un análisis de las tasas de empleo, actividad y desocupación obtenidos de 25 aglomerados de Argentina en mayo de 1990
 
 ```{r}
